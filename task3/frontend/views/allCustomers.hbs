@@ -1,0 +1,29 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-5">
+    <h1>All Customers</h1>
+<div>
+    <table class="table table-stripped table-border border-primary">
+    
+    <thead> 
+        <th>Id</th> <th>Name</th> <th>Balance</th></thead>
+    <tbody>
+        {{#if customers.length}}
+        {{#each customers}}
+        <tr> 
+            <td>{{this.custid}}</td> <td>{{this.custname}}</td> <td>{{this.custBalance}}</td><td><a href="editcustomer" class="btn btn-primary">Edit Customer</a></td>
+        </tr>
+        {{/each}}
+        {{else}}
+        <div class="alert-danger alert text-center">No Customers yet</div>
+        {{/if}}
+
+    </tbody>
+  
+    </table>
+</div>
+<a class="btn btn-success" href="addcustomer">Add Customer</a>
+
+</section>
+{{>footer}}
+
